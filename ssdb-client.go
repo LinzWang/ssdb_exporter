@@ -198,6 +198,13 @@ func sendSSDBCommand(ssdbAddr string) ([]string, bool) {
 		fmt.Println(err)
 		return nil, false
 	}
+	if *ssdbAuth != nil{
+		respAuth, err3 := db.Do("auth",*ssdbAuth )
+		if err3 != nil {
+			fmt.Println(err3)
+			return nil, false
+		}
+	}
 	defer db.Close()
 	resp, err2 := db.Do("info", "cmd")
 	if err2 != nil {
