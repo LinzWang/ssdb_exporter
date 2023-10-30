@@ -32,6 +32,7 @@ var (
 	metricsPath            = flag.String("metrics-path", "/metrics", "path to metrics endpoint")
 	ssdbAddrList           = flag.String("ssdb-list", "localhost:8888", "host1:port1,host2:port2 for ssdb socket")
 	rawLevel               = flag.String("log-level", "info", "log level")
+	ssdbAuth	       = flag.String("ssdb-auth","","auth password")
 )
 
 func main() {
@@ -70,6 +71,11 @@ func getEnvVars() {
 	if len(envSsdbAddrList) > 0 {
 		*ssdbAddrList = envSsdbAddrList
 		log.Debug("Loaded SSDB_LIST variable")
+	}
+	var envSsdbAuth = os.Getenv("SSDB_AUTH")
+	if len(envSsdbAuth) > 0 {
+		*ssdbAuth = envSsdbAuth
+		log.Debug("Loaded SSDB_AUTH variable")
 	}
 	var envBindAddr = os.Getenv("BIND_ADDR")
 	if len(envBindAddr) > 0 {
