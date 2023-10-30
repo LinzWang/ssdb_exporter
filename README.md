@@ -12,6 +12,7 @@ The Prometheus SSDB Exporter use command line flags , as well as environment var
 - `-log-level string` - log level (default "info")`
 - `-metrics-path string` - path to metrics endpoint (default "/metrics")
 - `-ssdb-list string` - host1:port1,host2:port2 for ssdb socket (default "localhost:8888")`
+- `-ssdb-auth string` - auth ssdb (default "")
 ### Environment variables
 - `BIND_ADDR` - same as `-bind-addr`
 - `LOG_LEVEL` - same as `-log-level`
