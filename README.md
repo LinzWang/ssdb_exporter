@@ -1,4 +1,5 @@
 # Prometheus SSDB Exporter
+support auth variables 
 
 This repository is a fork of [kys1230/ssdb_exporter](https://github.com/kys1230/ssdb_exporter). I've just made some changes to enable succesfull dockerization and a collection of replication parameters. It has now two ways of configuration, which are described below.
 
@@ -16,6 +17,7 @@ The Prometheus SSDB Exporter use command line flags , as well as environment var
 - `LOG_LEVEL` - same as `-log-level`
 - `METRICS_PATH` - same as `-metrics-path`
 - `SSDB_LIST`  - same as `-ssdb-list`
+- `SSDB_AUTH` - same as `-ssdb-auth`
 
 ## Grafana Dashboard
 
